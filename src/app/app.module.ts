@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { FormsModule } from '@angular/forms';
 import { ProyectoDetalleComponent } from './proyecto-detalle/proyecto-detalle.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProyectosComponent,
-    ProyectoDetalleComponent
+    ProyectoDetalleComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

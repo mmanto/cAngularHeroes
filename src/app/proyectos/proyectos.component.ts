@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { proyectos } from '../mocks-provider';
+
+import { ProyectoService } from '../proyecto.service';
 import { Proyecto } from '../proyecto';
+
 
 @Component({
   selector: 'app-proyectos',
@@ -9,16 +11,39 @@ import { Proyecto } from '../proyecto';
 })
 export class ProyectosComponent implements OnInit {
 
-  proyectos = proyectos;
-
   proyectoSeleccionado: Proyecto;
 
-  constructor() { }
+  proyectos: Proyecto[];
+
+  
+  constructor( private proyectoService: ProyectoService ) { }
 
   ngOnInit() {
+
+    this.getProyectos();
+
   }
 
-  onSelect(unProyecto: Proyecto): void {
-    this.proyectoSeleccionado = unProyecto;
+  getProyectos(): void {
+
+    this.proyectoService.getProyectos()
+
+        .subscribe(proyectos => this.proyectos = proyectos);
+
   }
+
+  /* Ejemplo inicial síncrono
+  getProyectos(): void{
+
+    this.proyectos = this.proyectoService.getProyectos();
+
+  }
+*/
+  
+  onSelect(proyecto: Proyecto): void {
+
+    this.proyectoSeleccionado = proyecto;
+
+  }
+
 }

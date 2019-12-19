@@ -1,5 +1,5 @@
-Capítulo 2
-----------
+Capítulo 2 Service
+------------------
 You refactored data access to the HeroService class.
 You registered the HeroService as the provider of its service at the root level so that it can be injected anywhere in the app.
 You used Angular Dependency Injection to inject it into a component.
@@ -9,3 +9,28 @@ You used RxJS of() to return an observable of mock heroes (Observable<Hero[]>).
 The component's ngOnInit lifecycle hook calls the HeroService method, not the constructor.
 You created a MessageService for loosely-coupled communication between classes.
 The HeroService injected into a component is created with another injected service, MessageService.
+
+
+Capítulo 3 Routing
+------------------
+Routing
+Add the AppRoutingModule
+Routes
+RouterModule.forRoot()
+Add RouterOutlet
+Add a navigation link (routerLink)
+Add a dashboard view
+Add the dashboard route
+Add a default route
+Add dashboard link to the shell
+Navigating to hero details
+Delete hero details from HeroesComponent
+Add a hero detail route
+DashboardComponent hero links
+HeroesComponent hero links
+Routable HeroDetailComponent
+Extract the id route parameter
+Add HeroService.getHero()
+Find the way back
+Final code review
+Summary

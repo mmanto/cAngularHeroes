@@ -27,4 +27,10 @@ export class ProyectoService {
 
   }
 
+  getProyecto(id: number): Observable<Proyecto> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`ProyectoService: fetched proyecto id=${id}`);
+    return of(proyectos.find(proyecto => proyecto.id === id));
+  }
+
 }
